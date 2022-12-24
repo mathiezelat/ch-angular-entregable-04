@@ -1,0 +1,20 @@
+<h1>Agregar curso</h1>
+<form [formGroup]="courseForm" class="mb-2">
+  <div class="w-full mb-2">
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Titulo</mat-label>
+      <input
+        [formControl]="titleControl"
+        matInput
+        placeholder="Ex. JavaScript"
+      />
+      <mat-error *ngIf="titleControl.getError('required')">
+        Titulo es requerido
+      </mat-error>
+      <mat-error *ngIf="titleControl.getError('minlength')">
+        Titulo debe tener 2 o más caracteres
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <button mat-flat-button color="primary" (click)="onSubmit()">Agregar</button>
+</form>

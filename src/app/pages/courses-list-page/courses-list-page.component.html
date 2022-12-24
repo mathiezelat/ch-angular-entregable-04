@@ -1,0 +1,8 @@
+<div>
+  <h3>Lista de cursos</h3>
+  <ul>
+    <li *ngFor="let course of this.courseService.courses$ | async">
+      {{ course.title }}
+    </li>
+  </ul>
+</div>

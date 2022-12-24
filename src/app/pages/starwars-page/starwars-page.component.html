@@ -1,0 +1,16 @@
+<h1>Star Wars</h1>
+<h3>Buscador de personajes</h3>
+<form class="mb-2" [formGroup]="peopleForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input [formControl]="searchControl" matInput placeholder="R2-D2" />
+  </mat-form-field>
+</form>
+<section>
+  <h4>Lista de personajes</h4>
+  <ul>
+    <li class="col-2" *ngFor="let person of people">
+      {{ person.name }}
+    </li>
+  </ul>
+</section>
